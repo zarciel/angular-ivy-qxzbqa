@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-user",
@@ -10,10 +10,42 @@ export class UserComponent implements OnInit {
 
   public listUser: user[];
 
+
+ @Input() public position :number;
+
   ngOnInit() {
     this.listUser = new Array<user>();
     this.listUser.push(new user("nciolas", "zarciel", "fr"));
   }
+
+  onAddUser() {
+    this.listUser.push(
+      new user(this.makeid(5), this.makeid(5), this.makeid(2))
+    );
+  }
+
+  takeName(position: number) {
+    if (position >= 0) {
+      return this.listUser[position];
+    } else {
+      return "";
+    }
+  }
+
+  makeid(length) {
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  /*numberOfRow() {
+    this.listUser.length;
+  }*/
 }
 
 class user {
