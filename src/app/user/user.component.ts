@@ -10,8 +10,7 @@ export class UserComponent implements OnInit {
 
   public listUser: user[];
 
-
- @Input() public position :number;
+  @Input() item: number;
 
   ngOnInit() {
     this.listUser = new Array<user>();
