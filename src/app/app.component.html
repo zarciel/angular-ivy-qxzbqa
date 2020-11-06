@@ -5,6 +5,10 @@
 Position de l'utilisateur :
 <input id="number" type="number" [(ngModel)]="positionUser" /> Nom : {{userName}}
 
+
+
 <!--<app-user [position]="positionUser"> </app-user>-->
 
-<app-user [item]="positionUser" (newItem)="getName($event)"> </app-user>
+<app-user #userComponent [item]="positionUser" (newItem)="getName($event)"> </app-user>
+
+<p> Nom de l'utilisateur {{userComponent.listUser[0].nickname}} </p>
