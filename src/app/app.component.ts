@@ -9,4 +9,10 @@ export class AppComponent {
   name = "Angular " + VERSION.major;
 
   public positionUser: number;
+
+  public userName: string;
+
+  getName(newItem: string) {
+    this.userName = newItem;
+  }
 }

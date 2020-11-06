@@ -3,8 +3,8 @@
 	Start editing to see some magic happen :)
 </p>
 Position de l'utilisateur :
-<input id="number" type="number" [(ngModel)]="positionUser" /> Nom :
+<input id="number" type="number" [(ngModel)]="positionUser" /> Nom : {{userName}}
 
 <!--<app-user [position]="positionUser"> </app-user>-->
 
-<app-user [item]="positionUser"> </app-user>
+<app-user [item]="positionUser" (newItem)="getName($event)"> </app-user>

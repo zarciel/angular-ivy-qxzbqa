@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-user",
@@ -11,6 +11,8 @@ export class UserComponent implements OnInit {
   public listUser: user[];
 
   @Input() item: number;
+
+  @Output() newItem = new EventEmitter<string>();
 
   ngOnInit() {
     this.listUser = new Array<user>();
@@ -25,10 +27,15 @@ export class UserComponent implements OnInit {
 
   takeName(position: number) {
     if (position >= 0) {
+      //  this.newItem = this.listUser[position].name;
       return this.listUser[position];
     } else {
       return "";
     }
+  }
+
+  onGetUserName() {
+    this.newItem.emit(this.listUser[this.item].name);
   }
 
   makeid(length) {
