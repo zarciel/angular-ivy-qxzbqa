@@ -15,4 +15,19 @@ export class AppComponent {
   getName(newItem: string) {
     this.userName = newItem;
   }
+
+  public listDays: string[];
+
+  ngOnInit() {
+    this.listDays = new Array<string>();
+    this.listDays.push(
+      "Monday",
+      "Tuesday",
+      "Wenesday",
+      "Thursday",
+      "Friday",
+      "Sathurday",
+      "Sunday"
+    );
+  }
 }

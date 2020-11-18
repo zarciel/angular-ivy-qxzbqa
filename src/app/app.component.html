@@ -13,4 +13,5 @@ Position de l'utilisateur :
 
 <p> Nom de l'utilisateur {{userComponent.listUser[0].nickname}} </p>
 
-<app-day> </app-day>
+<app-day *ngFor="let day of listDays" [day]="day">
+</app-day>

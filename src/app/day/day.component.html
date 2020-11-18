@@ -1,3 +1,7 @@
-<p>
-	We are
+<p [hidden]="day === 'Friday'">
+	We are {{ day }}
+
 </p>
+
+
+<p *ngIf="day === 'Friday'"> It's Friday ! </p>
