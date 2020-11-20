@@ -26,7 +26,7 @@ export class AppComponent {
       "Wenesday",
       "Thursday",
       "Friday",
-      "Sathurday",
+      "Saturday",
       "Sunday"
     );
   }

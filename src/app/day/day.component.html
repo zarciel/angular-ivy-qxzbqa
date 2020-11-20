@@ -1,7 +1,12 @@
-<p [hidden]="day === 'Friday'">
-	We are {{ day }}
-
-</p>
+<div [hidden]="day === 'Friday'">
+	<h2> {{ day }} </h2>
 
 
-<p *ngIf="day === 'Friday'"> It's Friday ! </p>
+	<div [ngSwitch]=true>
+		<h3 *ngSwitchCase="day === 'Saturday' || day === 'Sunday'"> Week-end </h3>
+		<p *ngSwitchDefault> It's time to work ! </p>
+	</div>
+
+	<p *ngIf="day === 'Friday'"> It's Friday ! </p>
+
+</div>
